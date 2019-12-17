@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    MinWidth="800"
+    MaxWidth="800"
 
     RequestedTheme="Light" 
     Loaded="Page_Loaded"
@@ -14,7 +14,7 @@
     Padding="0"
     Background="{ThemeResource SystemChromeWhiteColor}">
 
-        <RelativePanel Background="{ThemeResource SystemChromeWhiteColor}">
+        <RelativePanel Background="{ThemeResource SystemChromeWhiteColor}" >
             <Grid 
             RelativePanel.AlignBottomWithPanel="True"
             RelativePanel.AlignLeftWithPanel="True"
@@ -61,7 +61,7 @@
                         Padding="1,1,1,2">switch</Button>
                 </Border>
                 <Rectangle Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"  Fill="LightGray" Height="1"></Rectangle>
-                 <RichEditBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" x:Name="myRichEditBox" MinWidth="550" HorizontalAlignment="Stretch" BorderThickness="0" Padding="0,0,20,0" Margin="0,20,5,10" Grid.RowSpan="2"></RichEditBox>
+                 <RichEditBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" x:Name="myRichEditBox" HorizontalAlignment="Stretch" BorderThickness="0" Padding="0,0,20,0" Margin="0,20,5,10" Grid.RowSpan="2"></RichEditBox>
                 <Rectangle Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" Fill="LightGray" Height="1"></Rectangle>
                 <Button Grid.Row="6" Grid.Column="2"
                     x:Name="closeButton"
