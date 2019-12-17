@@ -1,0 +1,76 @@
+﻿<ContentDialog
+    x:Class="ContentDialogRepro.OriginalDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ContentDialogRepro"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    MinWidth="800"
+
+    RequestedTheme="Light" 
+    Loaded="Page_Loaded"
+    Margin="0"
+    Padding="0"
+    Background="{ThemeResource SystemChromeWhiteColor}">
+
+        <RelativePanel Background="{ThemeResource SystemChromeWhiteColor}">
+            <Grid 
+            RelativePanel.AlignBottomWithPanel="True"
+            RelativePanel.AlignLeftWithPanel="True"
+            RelativePanel.AlignRightWithPanel="True"
+            RelativePanel.AlignTopWithPanel="True"
+            Padding="0"
+            Margin="20 20 20 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="74"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="120"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="69"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="8"/>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Grid.Column="0" Source="ms-appx:///xd_appicon.png" Width="56" Height="56" Stretch="Uniform" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Center"></Image>
+                <TextBlock Grid.Row="0" Grid.Column="1" x:Name="titleLabel" FontFamily="{ThemeResource ContentControlThemeFontFamily}" FontSize="23" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="WrapWholeWords">title</TextBlock>
+                <Image Grid.Row="0" Grid.Column="2" Source="ms-appx:///AdobeLogo.png" Width="39" Height="56" Stretch="Uniform" HorizontalAlignment="Right"  VerticalAlignment="Center"></Image>
+                <StackPanel Grid.Row="1"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                    <TextBlock x:Name="appVersionLabel"
+                           x:Uid="AboutDialog_Version"
+                           FontSize="{StaticResource ControlContentThemeFontSize}">Version</TextBlock>
+                    <TextBlock x:Name="coreSyncVersionLabel"
+                           AutomationProperties.AutomationId="CoreSyncVersion"
+                           FontSize="{StaticResource ControlContentThemeFontSize}"></TextBlock>
+                </StackPanel>
+                <Border Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" BorderThickness="1" BorderBrush="LightGray" CornerRadius="3" Height="25">
+                    <Button x:Name="legalNoticesButton"
+                        Background="Transparent"
+                        Click="switchContent"
+                        FontSize="{StaticResource ControlContentThemeFontSize}"
+                        MinWidth="80"
+                        Padding="1,1,1,2">switch</Button>
+                </Border>
+                <Rectangle Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"  Fill="LightGray" Height="1"></Rectangle>
+                 <RichEditBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" x:Name="myRichEditBox" MinWidth="550" HorizontalAlignment="Stretch" BorderThickness="0" Padding="0,0,20,0" Margin="0,20,5,10" Grid.RowSpan="2"></RichEditBox>
+                <Rectangle Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" Fill="LightGray" Height="1"></Rectangle>
+                <Button Grid.Row="6" Grid.Column="2"
+                    x:Name="closeButton"
+                    Background="Transparent"
+                    Click="Hide"
+                    MinWidth="80"
+                    FontSize="18"
+                    Padding="1,1,1,2">close</Button>
+            </Grid>
+        </RelativePanel>
+    </ContentDialog>
+
